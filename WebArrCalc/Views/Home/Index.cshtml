@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div>
+
+        <form name="myForm">
+            <div class="row">
+                <label for="myInput" class="col-sm-3">
+                    Введите числа через запятую:
+                    <span style="font:bold larger;color:red" ng-show="myForm.myInput.$error.required">*</span>
+                </label>
+                <input type="text" class="form-control col-sm-4" name="myInput" id="myInput" pattern="\d+(,\d+)*" ng-model="array" required />
+            </div>
+            <br />
+            <div class="row">
+                <label for="mySelect" class="col-sm-3">
+                    Действие:
+                    <span style="font:bold large;color:red" ng-show="myForm.mySelect.$error.required">*</span>
+                </label>
+                <select ng-model="selectedAction" class="form-control col-sm-4" name="mySelect" id="mySelect" required
+                        ng-options="x.value as x.name for x in [{name:'Сумма',value:'Sum'},{name:'Произведение',value:'Mul'},{name:'Среднее значение',value:'Mean'}]"></select>
+            </div>
+        </form>
+
+        <br />
+        <button type="button" class="btn btn-success" ng-click="fun()" ng-disabled="myForm.$invalid">Рассчитать</button>
+    </div>
+
+    <div class="modal fade" id="resultModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col-sm-6"><h4 class="modal-title">Результат</h4></div>
+                        <div class="col-sm-6"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h1>{{result.Res}}</h1>
+                    <h5>Время: {{result.Time}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

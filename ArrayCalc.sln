@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayCalc", "ArrayCalc\ArrayCalc.csproj", "{AE20B0CD-C124-4FBD-8A6F-9FAAA163B393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebArrCalc", "WebArrCalc\WebArrCalc.csproj", "{4C2A4292-B463-4A83-8EF9-5DA2AAC80115}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE20B0CD-C124-4FBD-8A6F-9FAAA163B393} = {AE20B0CD-C124-4FBD-8A6F-9FAAA163B393}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE20B0CD-C124-4FBD-8A6F-9FAAA163B393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE20B0CD-C124-4FBD-8A6F-9FAAA163B393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE20B0CD-C124-4FBD-8A6F-9FAAA163B393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE20B0CD-C124-4FBD-8A6F-9FAAA163B393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2A4292-B463-4A83-8EF9-5DA2AAC80115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2A4292-B463-4A83-8EF9-5DA2AAC80115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2A4292-B463-4A83-8EF9-5DA2AAC80115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2A4292-B463-4A83-8EF9-5DA2AAC80115}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF381058-86D6-467B-AF3A-D36A023839FF}
+	EndGlobalSection
+EndGlobal
