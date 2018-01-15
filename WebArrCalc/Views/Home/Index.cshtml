@@ -1,30 +1,30 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div ng-app="myApp" ng-controller="myCtrl">
+<div>
     <div>
-
-        <form name="myForm">
+        <form name="myForm" id="myForm">
             <div class="row">
                 <label for="myInput" class="col-sm-3">
                     Введите числа через запятую:
-                    <span style="font:bold larger;color:red" ng-show="myForm.myInput.$error.required">*</span>
+                    <span style="font:bold larger;color:red" id="star">*</span>
                 </label>
-                <input type="text" class="form-control col-sm-4" name="myInput" id="myInput" pattern="\d+(,\d+)*" ng-model="array" required />
+                <input type="text" class="form-control col-sm-4" name="myInput" id="myInput" pattern="\d+(,\d+)*" required />
             </div>
             <br />
             <div class="row">
                 <label for="mySelect" class="col-sm-3">
                     Действие:
-                    <span style="font:bold large;color:red" ng-show="myForm.mySelect.$error.required">*</span>
                 </label>
-                <select ng-model="selectedAction" class="form-control col-sm-4" name="mySelect" id="mySelect" required
-                        ng-options="x.value as x.name for x in [{name:'Сумма',value:'Sum'},{name:'Произведение',value:'Mul'},{name:'Среднее значение',value:'Mean'}]"></select>
+                <select class="form-control col-sm-4" name="mySelect" id="mySelect" required>
+                    <option value="Sum">Сумма</option>
+                    <option value="Mul">Произведение</option>
+                    <option value="Mean">Среднее значение</option>
+                </select>
             </div>
+            <br />
+            <button id="btnResult" type="button" class="btn btn-success" disabled>Рассчитать</button>
         </form>
-
-        <br />
-        <button type="button" class="btn btn-success" ng-click="fun()" ng-disabled="myForm.$invalid">Рассчитать</button>
     </div>
 
     <div class="modal fade" id="resultModal">
@@ -37,8 +37,8 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <h1>{{result.Res}}</h1>
-                    <h5>Время: {{result.Time}}</h5>
+                    <h1><span id="resStr"></span></h1>
+                    <h5>Время: <span id="timeStr"></span></h5>
                 </div>
             </div>
         </div>
